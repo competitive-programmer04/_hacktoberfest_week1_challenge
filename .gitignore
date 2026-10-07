@@ -1,0 +1,52 @@
+# ===== Python =====
+my_venv/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ===== Backend runtime artifacts =====
+backend/temp_audio/
+backend/uploads/
+backend/sightings.jsonl
+Sightings_file
+*.wav
+*.webm
+*.mp3
+*.m4a
+*.opus
+
+# ===== Environment =====
+.env
+.env.local
+*.env
+
+# ===== Node / Frontend =====
+node_modules/
+frontend/dist/
+frontend/build/
+frontend/.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ===== Editors =====
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+desktop.ini
