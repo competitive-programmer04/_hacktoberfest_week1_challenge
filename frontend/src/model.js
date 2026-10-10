@@ -1,4 +1,4 @@
-const CACHE_NAME = "birdnet-pwa-cache-v1";
+const CACHE_NAME = "birdnet-pwa-cache-v2";
 const MODEL_URL = "https://huggingface.co/tphakala/BirdNET-v2.4/resolve/main/BirdNET_v2.4_int8_arm.onnx";
 const LABELS_URL = "https://huggingface.co/tphakala/BirdNET-v2.4/resolve/main/labels.txt";
 

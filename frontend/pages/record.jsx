@@ -111,13 +111,15 @@ try {
             const imgRes = await fetch(
               `https://api.inaturalist.org/v1/observations?taxon_name=${encodeURIComponent(commonName)}&quality_grade=research&per_page=1`
             );
+            if (!imgRes.ok) throw new Error('Offline');
             const imgData = await imgRes.json();
-            if (imgData.results?.[0]?.photos?.[0]?.url) {
-              setBirdImage(imgData.results[0].photos[0].url);
-            }
-          } catch (e) {
-            console.warn('Image fetch failed', e);
+           if (imgData.results?.[0]?.photos?.[0]?.url) {
+            setBirdImage(imgData.results[0].photos[0].url);
           }
+        } catch (e) {
+          // Offline or fetch failed — leave birdImage null, no broken image
+          console.log('Image fetch skipped (offline or failed):', e.message);
+  }
         }
       } catch (err) {
         console.error(err);
