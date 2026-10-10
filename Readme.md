@@ -4,7 +4,7 @@ An offline, on-device bird call identifier that runs entirely in your browser. R
 
 Built for Hacktoberfest 2026 — Week 1: Touch Grass.
 
-Live demo: [ADD YOUR VERCEL URL HERE]
+Live demo: https://hacktoberfest-week1-challenge.vercel.app/
 
 ## Why This Exists
 
