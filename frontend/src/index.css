@@ -1,4 +1,3 @@
-/* Global resets */
 *,
 *::before,
 *::after {
@@ -23,7 +22,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Kill default button styles so inline styles win */
 button {
   font-family: inherit;
   font-size: inherit;
@@ -33,7 +31,23 @@ button {
   color: inherit;
 }
 
-/* Spinner animation for the analyzing state */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
