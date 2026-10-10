@@ -20,7 +20,7 @@ Every cloud-based bird ID app fails exactly where birds are — in forests, moun
 No OpenAI. No cloud inference. No API keys. No cost.
 
 ## How It Works
-
+```
 Microphone captures 6 seconds of audio.
 MediaRecorder produces a WebM/Opus Blob.
 Web Audio API decodes and resamples to 48 kHz.
@@ -31,6 +31,7 @@ Results are sorted and filtered (>25% confidence) to produce the top match and a
 If confidence is high, a bird image is fetched from iNaturalist.
 
 Everything happens on-device. The model is cached in the browser's Cache Storage on first load, so subsequent opens work with zero network.
+```
 
 ## Features
 
@@ -44,32 +45,34 @@ Everything happens on-device. The model is cached in the browser's Cache Storage
 
 ## Project Structure
 
+```
 frontend/
-  public/
-    onnx/
-      ort.min.js
-      ort-wasm-simd-threaded.wasm
-      ort-wasm-simd-threaded.mjs
-    icon-192.png
-    icon-512.png
-  pages/
-      Home.jsx
-      Record.jsx
-  src/
-    audio.js
-    model.js
-    inference-worker.js
-    App.jsx
-    main.jsx
-    index.css
-  vite.config.js
-  package.json
-  index.html
+├── public/
+│   ├── onnx/
+│   │   ├── ort.min.js
+│   │   ├── ort-wasm-simd-threaded.wasm
+│   │   └── ort-wasm-simd-threaded.mjs
+│   ├── icon-192.png
+│   └── icon-512.png
+├── pages/
+│   ├── Home.jsx
+│   └── Record.jsx
+├── src/
+│   ├── audio.js
+│   ├── model.js
+│   ├── inference-worker.js
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── vite.config.js
+├── package.json
+└── index.html
+```
 
 ## Run Locally
 
 Requires Node.js 18+.
-
+```
 cd frontend
 npm install
 npm run dev
@@ -77,9 +80,10 @@ npm run dev
 Open http://localhost:5173.
 
 First launch downloads the BirdNET model (~47 MB) from Hugging Face and caches it in the browser. Subsequent launches load instantly from disk.
+```
 
 ## Build the PWA
-
+```
 cd frontend
 npm run build
 npm run preview
@@ -90,6 +94,7 @@ To test offline:
 1. Load the app once with network (wait for the model to download).
 2. Open DevTools, Network tab, set throttling to Offline.
 3. Reload — the app should still load and identify birds.
+```
 
 ## Model Sources
 
@@ -119,10 +124,11 @@ This project would not exist without open-source AI.
 - Single-threaded inference. For maximum browser compatibility, ONNX Runtime runs single-threaded WASM. Multi-threaded requires SharedArrayBuffer and COOP/COEP headers.
 
 ## Acknowledgments
-
+```
 BirdNET team at Cornell Lab of Ornithology and Chemnitz University of Technology.
 tphakala for the ONNX model conversion.
 Hacktoberfest 2026 organizers.
+```
 
 ## License
 
